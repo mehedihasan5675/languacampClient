@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ul {
+  background-color: #3e1d64 !important;
+}
+ul li:hover {
+  color: white !important;
+} */
