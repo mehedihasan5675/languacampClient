@@ -59,16 +59,16 @@ const Banner = () => {
           ></div>
           <SwiperSlide className="flex items-center">
           <div>
-          <div className=" text-violet-950 font-semibold font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-gray-100 bg-opacity-50 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
+          <div className=" text-violet-950 font-semibold font-mono py-3 rounded-full text-base md:text-4xl shadow-md  bg-purple-400 bg-opacity-90 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
          
              <div className='App'>
-      <span> JOIN THE FOREIGN LANGUAGE SUMMER CAMP! </span><span className="text-[#170131]  font-bold uppercase  italic md:text-5xl text-3xl">{titleOne}</span>
+      <span> JOIN THE FOREIGN LANGUAGE SUMMER CAMP! </span><span className="text-[#170131]  font-bold uppercase  italic md:text-5xl text-xl">{titleOne}</span>
     </div>
             </div>
-            <div className="w-full md:w-7/12 text-base shadow-md text-violet-950 bg-gray-100 bg-opacity-50 shadow-purple-100 rounded-full px-5 my-5 py-1 md:text-lg  tracking-widest" data-swiper-parallax="-200">
+            <div className="w-full md:w-7/12 text-sm shadow-md text-violet-950 bg-purple-400 bg-opacity-90  shadow-purple-100 rounded-full px-5 my-5 py-1 md:text-lg  tracking-widest" data-swiper-parallax="-200">
             {text}.
             </div>
-            <div className="w-7/12 px-5 py-6  bg-gray-100 hidden md:block bg-opacity-50 rounded-3xl shadow-lg shadow-gray-400" data-swiper-parallax="-100">
+            <div className="w-7/12 px-5 py-6   hidden md:block bg-purple-400 bg-opacity-90  rounded-3xl shadow-lg shadow-purple-400" data-swiper-parallax="-100">
               <p className=" text-violet-950 text-base tracking-wider leading-5  ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
@@ -83,13 +83,13 @@ const Banner = () => {
           </SwiperSlide>
           <SwiperSlide className="flex items-center">
           <div>
-          <div className=" text-purple-950 font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-gray-100 bg-opacity-50 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
-            {title}.
+          <div className=" text-purple-950 font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-violet-300 bg-opacity-90 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
+            ...{title}
             </div>
-            <div className="w-full md:w-7/12 text-base shadow-md  bg-gray-100 bg-opacity-50 shadow-purple-100 rounded-full px-5 my-5 py-1 text-purple-950 md:text-lg  tracking-widest" data-swiper-parallax="-200">
+            <div className="w-full md:w-7/12 text-sm shadow-md bg-violet-300 bg-opacity-90 shadow-purple-100 rounded-full px-5 my-5 py-1 text-purple-950 md:text-lg  tracking-widest" data-swiper-parallax="-200">
             {text}.
             </div>
-            <div className="md:w-7/12 hidden md:block w-full px-5 py-6  bg-gray-100 bg-opacity-80 rounded-3xl shadow-lg  shadow-purple-500" data-swiper-parallax="-100">
+            <div className="md:w-7/12 hidden md:block w-full px-5 py-6  bg-violet-300 bg-opacity-90 rounded-3xl shadow-lg  shadow-purple-500" data-swiper-parallax="-100">
               <p className=" text-purple-950 text-base tracking-wider leading-5  ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
@@ -105,9 +105,9 @@ const Banner = () => {
           <SwiperSlide className="flex items-center">
           <div className="">
           <div className=" text-black font-semibold font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-yellow-200 bg-opacity-70 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
-            {title}.
+            ...{title}
             </div>
-            <div className="w-full md:w-7/12 text-base shadow-md text-black font-semibold bg-yellow-200 bg-opacity-70 shadow-purple-100 rounded-full px-5 my-5 py-1 md:text-lg  tracking-widest" data-swiper-parallax="-200">
+            <div className="w-full md:w-7/12 text-sm shadow-md text-black font-semibold bg-yellow-200 bg-opacity-70 shadow-purple-100 rounded-full px-5 my-5 py-1 md:text-lg  tracking-widest" data-swiper-parallax="-200">
             {text}.
             </div>
             <div className="md:w-7/12 hidden md:block w-full px-5 py-6 bg-yellow-200 bg-opacity-80 rounded-3xl shadow-lg shadow-yellow-200" data-swiper-parallax="-100">
