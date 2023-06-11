@@ -29,7 +29,10 @@ const Header = () => {
         </details>
       </li> */}
       <li>
-        <Link>Item 3</Link>
+        <Link to="/login">Login</Link>
+      </li>
+      <li>
+        <Link to="/register">Register</Link>
       </li>
     </>
   );
