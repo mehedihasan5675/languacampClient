@@ -1,8 +1,10 @@
 
 import {
+  Navigate,
   createBrowserRouter
 } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
+import ErrorPage from "../pages/errorPage/ErrorPage";
 import Home from "../pages/homePage/home/Home";
 import Login from "../pages/login&register/login/Login";
 import Register from "../pages/login&register/register/Register";
@@ -23,7 +25,16 @@ import Register from "../pages/login&register/register/Register";
         {
           path:'register',
           element:<Register></Register>
+        },
+        {
+          path:'*',
+          element:<Navigate to="error"></Navigate>
         }
       ]
     },
+    {
+      path:'error',
+      element:<ErrorPage></ErrorPage>
+
+    }
   ]);

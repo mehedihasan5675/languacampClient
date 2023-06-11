@@ -64,9 +64,9 @@ const Header = () => {
               {navMenu}
             </ul>
           </div>
-          <Link className="btn  btn-ghost   normal-case text-xl">
-            <div className="border-2  rounded-full px-5 py-3 shadow-md shadow-slate-50 ">
-            <p className="uppercase italic text-lime-200 tracking-widest">LinguaCamp</p>
+          <Link className="     normal-case text-xl">
+            <div className="border-2 font-semibold  rounded-full px-5 py-3 shadow-md shadow-violet-900 ">
+            <p className="uppercase italic text-white  tracking-widest">Lingua<span className="text-yellow-100">Camp</span> </p>
             </div>
           </Link>
         </div>

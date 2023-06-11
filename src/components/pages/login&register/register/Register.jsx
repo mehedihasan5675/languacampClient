@@ -151,15 +151,14 @@ const Register = () => {
               )}
               {errors.password?.type === "pattern" && (
                 <span className="text-red-600 tracking-wider">
-                  There need at least one small letter, capital letter ,
-                  number,special character.Please fill this requirement.{" "}
+                  There need at least one small letter, capital letter & one special character.Please fill this requirement.{" "}
                 </span>
               )}
               <div className="form-control mt-6">
                 <input
                   type="submit"
                   value="Register"
-                  className="btn btn-primary"
+                  className="btn text-white hover:bg-purple-500 bg-purple-600"
                 />
               </div>
               <p className="text-pink-600 font-semibold">Already have an account? <Link to="/login" className="underline">Please Login...</Link> </p>

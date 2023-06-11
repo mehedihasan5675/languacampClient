@@ -113,13 +113,13 @@ const handleLoginBtn=(e)=>{
         </div>
         <div className="form-control mt-6">
           {/* TODO:make button disabled for work captcha */}
-          <input disabled={false} type="submit" value="Login" className="btn btn-primary"/>
+          <input disabled={false} type="submit" value="Login" className="btn text-white hover:bg-purple-500 bg-purple-600"/>
         </div>
 
 
       </form>
       <div className='mx-8 mb-10 '>
-      <button  onClick={handleGoogleLogin} className='btn btn-outline w-full btn-ghost  '>Login with Google</button>
+      <button  onClick={handleGoogleLogin} className='btn btn-outline w-full btn-ghost  '> <img className='w-8 h-8 rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDzmwConsAb6apPniVoMtGruouJXZ5MPYSxib6foY__g&s" alt="" /> Login with Google</button>
 
 <p className="text-pink-800 mt-5 font-semibold">New to LinguaCamp? <Link to="/register" className='underline'>Please Register...</Link> </p>
       </div>
