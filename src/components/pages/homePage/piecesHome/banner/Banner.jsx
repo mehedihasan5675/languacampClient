@@ -28,7 +28,7 @@ const Banner = () => {
     typeSpeed:40
   })
     return (
-        <div className="flex h-[400px] md:h-[700px]  bg-gradient-to-r from-violet-950 to-purple-950">
+        <div className="flex h-[400px] md:h-[720px]  bg-gradient-to-r from-violet-950 to-purple-950">
           
         <div className="w-full">
         <Swiper
@@ -52,24 +52,24 @@ const Banner = () => {
             style={{
               "backgroundImage":
                 `url(${bannerImg})`,
-                "backgroundPosition":'center',
+                "backgroundPosition":'top'
                 
             }}
             data-swiper-parallax="-23%"
           ></div>
           <SwiperSlide className="flex items-center">
           <div>
-          <div className=" text-white font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-gray-400 bg-opacity-50 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
+          <div className=" text-violet-950 font-semibold font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-gray-100 bg-opacity-50 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
          
              <div className='App'>
-      <span> JOIN THE FOREIGN LANGUAGE SUMMER CAMP! </span><span className="text-yellow-200 font-bold uppercase  italic md:text-5xl text-3xl">{titleOne}</span>
+      <span> JOIN THE FOREIGN LANGUAGE SUMMER CAMP! </span><span className="text-[#170131]  font-bold uppercase  italic md:text-5xl text-3xl">{titleOne}</span>
     </div>
             </div>
-            <div className="w-full md:w-7/12 text-base shadow-md  bg-gray-400 bg-opacity-50 shadow-purple-100 rounded-full px-5 my-5 py-1 md:text-lg  tracking-widest" data-swiper-parallax="-200">
+            <div className="w-full md:w-7/12 text-base shadow-md text-violet-950 bg-gray-100 bg-opacity-50 shadow-purple-100 rounded-full px-5 my-5 py-1 md:text-lg  tracking-widest" data-swiper-parallax="-200">
             {text}.
             </div>
-            <div className="w-7/12 px-5 py-6  bg-gray-400 hidden md:block bg-opacity-50 rounded-3xl shadow-lg shadow-gray-400" data-swiper-parallax="-100">
-              <p className=" text-white text-base tracking-wider leading-5  ">
+            <div className="w-7/12 px-5 py-6  bg-gray-100 hidden md:block bg-opacity-50 rounded-3xl shadow-lg shadow-gray-400" data-swiper-parallax="-100">
+              <p className=" text-violet-950 text-base tracking-wider leading-5  ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
                 laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
@@ -83,14 +83,14 @@ const Banner = () => {
           </SwiperSlide>
           <SwiperSlide className="flex items-center">
           <div>
-          <div className=" text-white font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-purple-400 bg-opacity-50 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
+          <div className=" text-purple-950 font-mono py-3 rounded-full text-lg md:text-4xl shadow-md  bg-gray-100 bg-opacity-50 shadow-purple-100 inline-block px-5" data-swiper-parallax="-300">
             {title}.
             </div>
-            <div className="w-full md:w-7/12 text-base shadow-md  bg-purple-400 bg-opacity-50 shadow-purple-100 rounded-full px-5 my-5 py-1 md:text-lg  tracking-widest" data-swiper-parallax="-200">
+            <div className="w-full md:w-7/12 text-base shadow-md  bg-gray-100 bg-opacity-50 shadow-purple-100 rounded-full px-5 my-5 py-1 text-purple-950 md:text-lg  tracking-widest" data-swiper-parallax="-200">
             {text}.
             </div>
-            <div className="md:w-7/12 hidden md:block w-full px-5 py-6  bg-purple-500 bg-opacity-80 rounded-3xl shadow-lg shadow-purple-500" data-swiper-parallax="-100">
-              <p className=" text-white text-base tracking-wider leading-5  ">
+            <div className="md:w-7/12 hidden md:block w-full px-5 py-6  bg-gray-100 bg-opacity-80 rounded-3xl shadow-lg  shadow-purple-500" data-swiper-parallax="-100">
+              <p className=" text-purple-950 text-base tracking-wider leading-5  ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
                 laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.

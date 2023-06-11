@@ -1,0 +1,44 @@
+[
+  {
+    "image": "https://img.freepik.com/free-vector/learning-french-concept-illustration_114360-16502.jpg?size=626&ext=jpg&uid=R35423308&ga=GA1.1.1730661534.1680229426&semt=ais",
+    "language_name": "French Language",
+    "instructor_name": "Abdul Hok",
+    "available_seats": 44,
+    "price": 120
+  },
+  {
+    "image": "https://img.freepik.com/free-vector/spanish-concept-illustration_114360-15686.jpg?size=626&ext=jpg&uid=R35423308&ga=GA1.2.1730661534.1680229426&semt=ais",
+    "language_name": "Spanish Language",
+    "instructor_name": "Anoyar Hok",
+    "available_seats": 14,
+    "price": 170
+  },
+  {
+    "image": "https://img.freepik.com/free-vector/learning-chinese-concept-illustration_114360-16499.jpg?size=626&ext=jpg&uid=R35423308&ga=GA1.2.1730661534.1680229426&semt=ais",
+    "language_name": "Chinese Language",
+    "instructor_name": "Mr Shahriyar",
+    "available_seats": 24,
+    "price": 220
+  },
+  {
+    "image": "https://img.freepik.com/free-photo/italian-lettering-yellow-background_23-2148293444.jpg?size=626&ext=jpg&uid=R35423308&ga=GA1.1.1730661534.1680229426&semt=ais",
+    "language_name": "Italian Language",
+    "instructor_name": "Md Masudur Rahman",
+    "available_seats": 21,
+    "price": 190
+  },
+  {
+    "image": "https://img.freepik.com/free-vector/hand-drawn-english-book-background_23-2149483336.jpg?size=626&ext=jpg&uid=R35423308&ga=GA1.2.1730661534.1680229426&semt=ais",
+    "language_name": "English Language",
+    "instructor_name": "Mr Faruki",
+    "available_seats": 56,
+    "price": 270
+  },
+  {
+    "image": "https://img.freepik.com/free-vector/arabic-lesson-with-tutor-teacher-vector_570502-53.jpg?size=626&ext=jpg&uid=R35423308&ga=GA1.2.1730661534.1680229426&semt=ais",
+    "language_name": "Arabic Language",
+    "instructor_name": "Anoyar Hok",
+    "available_seats": 66,
+    "price": 100
+  }
+]
