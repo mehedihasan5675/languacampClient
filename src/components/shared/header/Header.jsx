@@ -1,38 +1,54 @@
-import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import ActiveLink from "../../activelink/ActiveLink";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleSingOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Sign out successfully!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/");
+      })
+      .catch(() => {});
+  };
   const navMenu = (
     <>
       <li>
-        <Link>Home</Link>
+        <ActiveLink to="/">Home</ActiveLink>
       </li>
       <li>
-        <Link>Instructors</Link>
+        <ActiveLink to="">Classes</ActiveLink>
       </li>
       <li>
-        <Link>Classes</Link>
+        <ActiveLink to="">Instructors</ActiveLink>
       </li>
-      <li>
-        <Link>Dashboard</Link>
+      {
+        user && <li>
+        <ActiveLink to="">Dashboard</ActiveLink>
       </li>
-      {/* <li tabIndex={0}>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2 text-black">
-            <li>
-              <Link>Submenu 1</Link>
-            </li>
-            <li>
-              <Link>Submenu 2</Link>
-            </li>
-          </ul>
-        </details>
-      </li> */}
+      }
+      
+     
       <li>
-        <Link to="/login">Login</Link>
-      </li>
-      <li>
-        <Link to="/register">Register</Link>
+      {user && (
+            <>
+              <button className="btn bg-purple-900 border-none shadow-md btn-sm md:btn-md flex gap-2 mr-2">
+                <FaShoppingCart className="text-white"></FaShoppingCart>
+                <div className="badge badge-secondary">+$ {}</div>
+              </button>
+            </>
+          )}
+          
       </li>
     </>
   );
@@ -64,7 +80,7 @@ const Header = () => {
               {navMenu}
             </ul>
           </div>
-          <Link className="     normal-case text-xl">
+          <Link className="     normal-case text-sm sm:text-xl">
             <div className="border-2 font-semibold  rounded-full px-5 py-3 shadow-md shadow-violet-900 ">
             <p className="uppercase italic text-white  tracking-widest">Lingua<span className="text-yellow-100">Camp</span> </p>
             </div>
@@ -76,7 +92,28 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn">Button</Link>
+        {user ? (
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleSingOut}
+                className="btn bg-purple-800 md:btn-sm btn-xs text-white hover:text-black border-none "
+              >
+                Sign Out
+              </button>
+              <img
+                className="md:w-12 w-10 cursor-pointer mr-3 h-10 md:h-12 rounded-full"
+                src={user.photoURL}
+                alt="" title={user.displayName}
+              />
+            </div>
+          ):<Link to="/login">
+          <button
+          
+          className="btn bg-purple-800 md:btn-sm btn-xs mr-5 text-white hover:text-black border-none "
+        >
+          Login
+        </button></Link>}
+          
         </div>
       </div>
     </div>
