@@ -27,14 +27,14 @@ const Header = () => {
         <ActiveLink to="/">Home</ActiveLink>
       </li>
       <li>
-        <ActiveLink to="">Classes</ActiveLink>
+        <ActiveLink to="/classes">Classes</ActiveLink>
       </li>
       <li>
-        <ActiveLink to="">Instructors</ActiveLink>
+        <ActiveLink to="/instructors">Instructors</ActiveLink>
       </li>
       {
         user && <li>
-        <ActiveLink to="">Dashboard</ActiveLink>
+        <ActiveLink to="/dashboard">Dashboard</ActiveLink>
       </li>
       }
       
@@ -42,9 +42,9 @@ const Header = () => {
       <li>
       {user && (
             <>
-              <button className="btn bg-purple-900 border-none shadow-md btn-sm md:btn-md flex gap-2 mr-2">
+              <button className="btn mt-3 md:mt-0 items-center bg-purple-900  hover:bg-purple-700  border-none shadow-md btn-sm lg:btn-md flex gap-2 mr-2">
                 <FaShoppingCart className="text-white"></FaShoppingCart>
-                <div className="badge badge-secondary">+$ {}</div>
+                <div className="badge badge-secondary">+ {}</div>
               </button>
             </>
           )}
