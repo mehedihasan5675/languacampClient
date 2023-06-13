@@ -42,9 +42,11 @@ const Header = () => {
           {
             isAdmin ? <>
             <ActiveLink to="/dashboard/manageClasses">Dashboard</ActiveLink>
-            </>:<>
+            </>:isInstructor ? <>
             
-            <ActiveLink to="/dashboard/addClasses">Dashboard</ActiveLink></>
+            <ActiveLink to="/dashboard/addClasses">Dashboard</ActiveLink></>:<>
+            
+            <ActiveLink to="/dashboard/mySelectedClass">Dashboard</ActiveLink></>
           }
       </li>
       }

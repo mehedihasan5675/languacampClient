@@ -54,7 +54,7 @@ const Dashboard = () => {
               </>:<>
               <li>
                 <p className="bg-[#A9907E] px-3 py-2 rounded-2xl shadow-md text-yellow-200 mb-5">Student Dashboard</p>
-              <ActiveLink to="/"><FaHome className="text-yellow-400"></FaHome> My Selected Classes</ActiveLink>
+              <ActiveLink to="/dashboard/mySelectedClass"><FaHome className="text-yellow-400"></FaHome> My Selected Classes</ActiveLink>
                <ActiveLink to="/"><FaHome className="text-yellow-400"></FaHome>My Enrolled Classes</ActiveLink> 
               
               <ActiveLink to="/"><FaWallet className="text-yellow-400"></FaWallet> Payment </ActiveLink>

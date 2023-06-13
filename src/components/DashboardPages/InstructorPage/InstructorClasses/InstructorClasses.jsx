@@ -62,7 +62,7 @@ const InstructorClasses = () => {
                     </th>
                     <th>
 
-                    <div className={`${cls.status==='pending'? 'text-yellow-300':cls.status==='approved'?'text-green-400':'text-red-500'} tracking-widest`}>
+                    <div className={`${cls.status==='pending'? 'text-yellow-200':cls.status==='approved'?'text-green-700':'text-rose-700'} tracking-widest`}>
                      {cls.status}
                       </div>
                     </th>

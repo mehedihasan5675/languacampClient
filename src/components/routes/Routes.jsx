@@ -3,6 +3,7 @@ import {
   Navigate,
   createBrowserRouter
 } from "react-router-dom";
+import ManageClasses from "../DashboardPages/AdminPages/ManageClasses/ManageClasses";
 import ManageUsers from "../DashboardPages/AdminPages/ManageUsers/ManageUsers";
 import AddClasses from "../DashboardPages/InstructorPage/AddClass/AddClasses";
 import InstructorClasses from "../DashboardPages/InstructorPage/InstructorClasses/InstructorClasses";
@@ -54,6 +55,10 @@ import Register from "../pages/login&register/register/Register";
           {
             path:'instructorClasses',
             element:<InstructorClasses></InstructorClasses>
+          },
+          {
+            path:'manageClasses',
+            element:<ManageClasses></ManageClasses>
           }
         ]
         
