@@ -23,7 +23,7 @@ const AddClasses = () => {
         if(imgResponse.success){
             const imgURL=imgResponse.data.display_url
             const {class_name,price,instructor_name,instructor_email,available_seats}=data
-            const newItem={class_name,price:parseInt(price),instructor_name,instructor_email,available_seats:parseInt(available_seats),image:imgURL,status:'pending'}
+            const newItem={class_name,price:parseInt(price),instructor_name,instructor_email,available_seats:parseInt(available_seats),image:imgURL,status:'pending',total_enrolled:parseInt(0)}
             console.log(newItem);
             axiosSecure.post('/classes',newItem)
             .then(data=>{
@@ -131,7 +131,7 @@ const AddClasses = () => {
         <input
           type="submit"
           className="block btn bg-[#9c8e80] hover:bg-[#908174] border-none text-white shadow-lg mt-10 w-full"
-          value="Add Item"
+          value="Add Class"
         />
       </form>
     </div>

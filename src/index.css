@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  background-color: transparent;
+}
 /* ul {
   background-color: #3e1d64 !important;
 }
