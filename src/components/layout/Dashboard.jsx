@@ -3,16 +3,23 @@ import { FaArrowRight, FaCalendar, FaHome, FaPhotoVideo, FaUserGraduate, FaUsers
 import { Outlet, useNavigation } from "react-router-dom";
 import ActiveLink from "../activelink/ActiveLink";
 import Loader from "../loader/Loader";
+import useAdmin from "../utils/useAdmin";
+import useInstructor from "../utils/useInstructor";
 const Dashboard = () => {
     const navigation=useNavigation()
-    // const [isAdmin]=useAdmin()
-    const isAdmin=true
-    const isInstructor=false
+    const [isAdmin,isAdminLoading]=useAdmin()
+    const [isInstructor,isInstructorLoading]=useInstructor()
+    console.log(isInstructor,isAdmin);
+   if(isAdminLoading && isInstructorLoading){
+    return <Loader></Loader>
+   }
+    // const isAdmin=true
+    // const isInstructor=false
   return (
     <>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col  bg-[#a9907eab] ">
+        <div className="drawer-content flex flex-col bg-[#a9907eab]  ">
         <div>{navigation.state === 'loading' && <Loader></Loader>}</div>
           <Outlet></Outlet>
           <label
@@ -35,8 +42,8 @@ const Dashboard = () => {
               
             </li>
             
-              </>:<>
-              {isInstructor} ? <>
+              </>:
+              isInstructor ? <>
               <li>
                 <p className="bg-[#A9907E] px-3 py-2 rounded-2xl shadow-md text-yellow-200 mb-5">Instructor Dashboard</p>
               <ActiveLink to="/"><FaHome className="text-yellow-400"></FaHome> Add a Class</ActiveLink> 
@@ -47,13 +54,15 @@ const Dashboard = () => {
               </>:<>
               <li>
                 <p className="bg-[#A9907E] px-3 py-2 rounded-2xl shadow-md text-yellow-200 mb-5">Student Dashboard</p>
-              <ActiveLink to="/">My Selected Classes<FaHome className="text-yellow-400"></FaHome> My Enrolled Classes</ActiveLink> 
+              <ActiveLink to="/"><FaHome className="text-yellow-400"></FaHome> My Selected Classes</ActiveLink>
+               <ActiveLink to="/"><FaHome className="text-yellow-400"></FaHome>My Enrolled Classes</ActiveLink> 
               
               <ActiveLink to="/"><FaWallet className="text-yellow-400"></FaWallet> Payment </ActiveLink>
             </li>
             
               </>
-              </>
+             
+              
             }
             <div className="divider h-1 my-5 bg-gray-600 rounded-full"></div>
 

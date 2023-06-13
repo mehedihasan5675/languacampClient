@@ -63,6 +63,7 @@ const handleLoginBtn=(e)=>{
         const userInfo={
           name:user.displayName,email:user.email,photoURL:user.photoURL
         }
+        console.log(userInfo);
         fetch(`http://localhost:7000/user`,{
         method:"POST",
         headers:{
