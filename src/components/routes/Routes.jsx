@@ -4,6 +4,7 @@ import {
   createBrowserRouter
 } from "react-router-dom";
 import ManageUsers from "../DashboardPages/AdminPages/ManageUsers/ManageUsers";
+import AddClasses from "../DashboardPages/InstructorPage/AddClass/AddClasses";
 import Dashboard from "../layout/Dashboard";
 import MainLayout from "../layout/MainLayout";
 import ErrorPage from "../pages/errorPage/ErrorPage";
@@ -44,6 +45,10 @@ import Register from "../pages/login&register/register/Register";
           {
             path:'manageUsers',
             element:<ManageUsers></ManageUsers>
+          },
+          {
+            path:'addClasses',
+            element:<AddClasses></AddClasses>
           }
         ]
         

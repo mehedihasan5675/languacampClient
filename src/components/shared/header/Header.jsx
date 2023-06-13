@@ -4,8 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import ActiveLink from "../../activelink/ActiveLink";
+import useAdmin from "../../utils/useAdmin";
+import useInstructor from "../../utils/useInstructor";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin]=useAdmin()
+  const [isInstructor]=useInstructor()
   const navigate = useNavigate();
   const handleSingOut = () => {
     logOut()
@@ -34,7 +38,14 @@ const Header = () => {
       </li>
       {
         user && <li>
-        <ActiveLink to="/dashboard">Dashboard</ActiveLink>
+        
+          {
+            isAdmin ? <>
+            <ActiveLink to="/dashboard/manageClasses">Dashboard</ActiveLink>
+            </>:<>
+            
+            <ActiveLink to="/dashboard/addClasses">Dashboard</ActiveLink></>
+          }
       </li>
       }
       
