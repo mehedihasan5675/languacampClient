@@ -30,17 +30,17 @@ const Register = () => {
         const userInfo={
          name:data.name, email:data.email,photoURL:data.photo_URL
         }
-    //   fetch(`http://localhost:5000/user`,{
-    //     method:"POST",
-    //     headers:{
-    //       'content-type':'application/json'
-    //     },
-    //     body:JSON.stringify(userInfo)
-    //   })
-    //   .then(res=>res.json())
-    //   .then(data=>{
-    //     console.log(data);
-    //   })
+      fetch(`http://localhost:7000/user`,{
+        method:"POST",
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify(userInfo)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data);
+      })
        profileUpdate(result.user,data.name,data.photo_URL)
        .then(() => {
          reset();

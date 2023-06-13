@@ -63,25 +63,25 @@ const handleLoginBtn=(e)=>{
         const userInfo={
           name:user.displayName,email:user.email,photoURL:user.photoURL
         }
-    //     fetch(`http://localhost:5000/user`,{
-    //     method:"POST",
-    //     headers:{
-    //       'content-type':'application/json'
-    //     },
-    //     body:JSON.stringify(userInfo)
-    //   })
-    //   .then(res=>res.json())
-    //   .then(data=>{
-    //     console.log(data);
-    //     navigate(goTo,{replace:true})
-    //     Swal.fire({
-    //       position:"top-end",
-    //       icon: "success",
-    //       title: "Login successfully Done!",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    //   })
+        fetch(`http://localhost:7000/user`,{
+        method:"POST",
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify(userInfo)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data);
+        navigate(goTo,{replace:true})
+        Swal.fire({
+          position:"top-end",
+          icon: "success",
+          title: "Login successfully Done!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
       })
       .catch(error=>{
         console.log(error.message);

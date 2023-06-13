@@ -11,6 +11,8 @@ const PopularInstructor = () => {
             setAllPopularInstructor(data)
         })
     },[])
+
+    
   return (
     <div className="bg-gradient-to-t from-[#815ead] to-purple-900">
       <div>

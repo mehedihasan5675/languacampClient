@@ -3,6 +3,7 @@ import {
   Navigate,
   createBrowserRouter
 } from "react-router-dom";
+import ManageUsers from "../DashboardPages/AdminPages/ManageUsers/ManageUsers";
 import Dashboard from "../layout/Dashboard";
 import MainLayout from "../layout/MainLayout";
 import ErrorPage from "../pages/errorPage/ErrorPage";
@@ -38,7 +39,13 @@ import Register from "../pages/login&register/register/Register";
     {
       
         path:'dashboard',
-        element:<Dashboard></Dashboard>
+        element:<Dashboard></Dashboard>,
+        children:[
+          {
+            path:'manageUsers',
+            element:<ManageUsers></ManageUsers>
+          }
+        ]
         
     },
     {

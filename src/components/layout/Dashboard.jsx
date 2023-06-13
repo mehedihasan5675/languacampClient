@@ -12,7 +12,7 @@ const Dashboard = () => {
     <>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col  ">
+        <div className="drawer-content flex flex-col  bg-[#a9907eab] ">
         <div>{navigation.state === 'loading' && <Loader></Loader>}</div>
           <Outlet></Outlet>
           <label
@@ -31,7 +31,7 @@ const Dashboard = () => {
               <li>
                 <p className="bg-[#A9907E] px-3 py-2 rounded-2xl shadow-md text-yellow-200 mb-5">Admin Dashboard</p>
               <ActiveLink to="/"><FaCalendar className="text-yellow-400"></FaCalendar> Manage Classes</ActiveLink> 
-              <ActiveLink to="/k"><FaUsers className="text-yellow-400"></FaUsers> Manage Users</ActiveLink> 
+              <ActiveLink to="/dashboard/manageUsers"><FaUsers className="text-yellow-400"></FaUsers> Manage Users</ActiveLink> 
               
             </li>
             
