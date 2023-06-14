@@ -33,6 +33,7 @@ const Header = () => {
       })
       .catch(() => {});
   };
+ 
   const navMenu = (
     <>
       <li>

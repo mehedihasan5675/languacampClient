@@ -11,10 +11,10 @@ import useSelectedClasses from "../../utils/useSelectedClasses";
 const CardClassesPage = ({allClass}) => {
     const [isAdmin]=useAdmin()
     const [isInstructor]=useInstructor()
-    // const [selectJustOneTime,setSelectJustOneTime]=useState(false)
+    const {user}=useContext(AuthContext)
+    
     const {available_seats,image,instructor_name,instructor_email,class_name,price,_id}=allClass
     const navigate=useNavigate()
-    const {user}=useContext(AuthContext)
     const [,refetch,isLoading]=useSelectedClasses()
     if(isLoading){
         return <Loader></Loader>
@@ -29,7 +29,7 @@ if(user){
 .then(data=>{
     if(data.data.insertedId){
         refetch()
-        setSelectJustOneTime(true)
+        // setSelectJustOneTime(true)
         Swal.fire({
             position: 'top-end',
             icon: 'success',

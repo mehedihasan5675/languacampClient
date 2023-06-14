@@ -1,6 +1,7 @@
 
 const CardPopularInstructor = ({popularInstructor}) => {
     const {image,name,email}=popularInstructor
+    console.log(popularInstructor);
     return (
         <div>
               <div  className="card h-[450px] md:h-[500px]  mx-auto  md:w-96 w-[340px]  bg-base-100 shadow-xl">
