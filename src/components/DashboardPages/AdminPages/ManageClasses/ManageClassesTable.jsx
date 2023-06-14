@@ -17,7 +17,7 @@ const ManageClassesTable = ({cls,i,refetch}) => {
             confirmButtonText: 'Yes, Approved!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:7000/class/approve/${cls._id}`,
+                fetch(`https://server-spoking-summer.vercel.app/class/approve/${cls._id}`,
         {
             method:"PATCH"
         })
@@ -54,7 +54,7 @@ const ManageClassesTable = ({cls,i,refetch}) => {
             if (result.isConfirmed) {
 
                 
-                fetch(`http://localhost:7000/class/deny/${cls._id}`,
+                fetch(`https://server-spoking-summer.vercel.app/class/deny/${cls._id}`,
         {
             method:"PATCH"
         })
@@ -92,7 +92,7 @@ const ManageClassesTable = ({cls,i,refetch}) => {
 // navigate(`/dashboard/feedback/${cls._id}`)
               
                 
-// fetch(`http://localhost:7000/class/deny/${cls._id}`,
+// fetch(`https://server-spoking-summer.vercel.app/class/deny/${cls._id}`,
 // {
 //     method:"PATCH"
 // })

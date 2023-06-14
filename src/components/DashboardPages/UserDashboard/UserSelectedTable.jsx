@@ -16,7 +16,7 @@ const UserSelectedTable = ({selectedClass,i}) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:7000/deleteUserClass/${id}`)
+                axios.delete(`https://server-spoking-summer.vercel.app/deleteUserClass/${id}`)
                 .then(data=>{
                     console.log(data.data);
                     if(data.data.deletedCount >0){

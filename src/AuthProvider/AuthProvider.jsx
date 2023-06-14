@@ -1,13 +1,13 @@
 
 import axios from "axios";
 import {
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    getAuth,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../__firebase/firebase.config";
@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (currentUser && currentUser.email) {
-        axios.post("http://localhost:7000/jwt", { email: currentUser.email })
+        axios.post("https://server-spoking-summer.vercel.app/jwt", { email: currentUser.email })
           .then((data) => {
             const token = data.data.token;
             localStorage.setItem("access-token", token);

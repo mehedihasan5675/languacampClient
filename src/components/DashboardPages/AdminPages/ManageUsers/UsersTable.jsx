@@ -27,7 +27,7 @@ const handleAdminBtn=(user)=>{
         confirmButtonText: 'Yes, Do Admin!'
       }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:7000/users/admin/${user._id}`,
+            fetch(`https://server-spoking-summer.vercel.app/users/admin/${user._id}`,
     {
         method:"PATCH"
     })
@@ -63,7 +63,7 @@ const handleInstructorBtn=(user)=>{
       confirmButtonText: 'Yes, Do Instructor!'
     }).then((result) => {
       if (result.isConfirmed) {
-          fetch(`http://localhost:7000/users/instructor/${user._id}`,
+          fetch(`https://server-spoking-summer.vercel.app/users/instructor/${user._id}`,
   {
       method:"PATCH"
   })

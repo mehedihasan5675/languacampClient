@@ -25,7 +25,7 @@ const CardClassesPage = ({allClass}) => {
         const updatedSelectClass={available_seats,image,instructor_name,instructor_email,class_name,price,status,total_enrolled}
 
 if(user){
-    axios.post('http://localhost:7000/ClassCart',updatedSelectClass)
+    axios.post('https://server-spoking-summer.vercel.app/ClassCart',updatedSelectClass)
 .then(data=>{
     if(data.data.insertedId){
         refetch()

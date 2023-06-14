@@ -30,7 +30,7 @@ const Register = () => {
         const userInfo={
          name:data.name, email:data.email,photoURL:data.photo_URL
         }
-      fetch(`http://localhost:7000/user`,{
+      fetch(`https://server-spoking-summer.vercel.app/user`,{
         method:"POST",
         headers:{
           'content-type':'application/json'

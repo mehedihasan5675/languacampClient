@@ -10,7 +10,7 @@ const form=e.target
 const feedback=form.feedback.value 
 const Feedback={feedbk:feedback}
 console.log(feedback);
-        fetch(`http://localhost:7000/class/feedback/${id}`,
+        fetch(`https://server-spoking-summer.vercel.app/class/feedback/${id}`,
         {
             method:"POST",
             headers:{
