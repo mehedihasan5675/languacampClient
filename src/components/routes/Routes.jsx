@@ -20,6 +20,8 @@ import ErrorPage from "../pages/errorPage/ErrorPage";
 import Home from "../pages/homePage/home/Home";
 import Login from "../pages/login&register/login/Login";
 import Register from "../pages/login&register/register/Register";
+import AdminRoute from "./adminRoute/AdminRoute";
+import PrivateRoute from "./privateRoute/PrivateRoute";
   
  export  const router = createBrowserRouter([
     {
@@ -58,11 +60,11 @@ import Register from "../pages/login&register/register/Register";
     {
       
         path:'dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children:[
           {
             path:'manageUsers',
-            element:<ManageUsers></ManageUsers>
+            element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
           },
           {
             path:'mySelectedClass',
@@ -90,7 +92,7 @@ import Register from "../pages/login&register/register/Register";
           },
           {
             path:'manageClasses',
-            element:<ManageClasses></ManageClasses>
+            element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
           },
           {
             path:'feedback/:id',

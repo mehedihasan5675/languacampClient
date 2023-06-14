@@ -1,6 +1,5 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from 'react-simple-captcha';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../../AuthProvider/AuthProvider';
 const Login = () => {
@@ -11,27 +10,10 @@ const Login = () => {
   const goTo=location?.state?.from?.pathname || '/'
   console.log(goTo);
 
-  const [disabled,setDisable]=useState(false)
 const {LoginGoogle}=useContext(AuthContext)
-    useEffect(()=>{
-        loadCaptchaEnginge(6)
-setDisable(true)
-    },[])
-    const captchaRef=useRef(null)
-    const handleCapcha=(e)=>{
-      e.preventDefault()
-        const captcha=captchaRef.current.value 
-        console.log(captcha);
-
-        if (validateCaptcha(captcha)==true) {
-          
-          setDisable(false)
-      }
- 
-      else {
-        setDisable(true)
-      }
-    }
+   
+    
+      
 
 const handleLoginBtn=(e)=>{
   e.preventDefault()
@@ -106,15 +88,11 @@ const handleLoginBtn=(e)=>{
             <span className="label-text">Password</span>
           </label>
           <input name='password' type="password" placeholder="password" className="input input-bordered" />
-          <div className="">
-            <div  className="my-2"><LoadCanvasTemplate /></div>
-            <input ref={captchaRef} type="text" placeholder="type your Captcha" className="input input-bordered my-3" />
-            <button onClick={handleCapcha} className='btn w-3/6 btn-xs btn-ghost btn-outline'>confirm Captcha</button>
-          </div>
+          
         </div>
         <div className="form-control mt-6">
-          {/* TODO:make button disabled for work captcha */}
-          <input disabled={false} type="submit" value="Login" className="btn text-white hover:bg-purple-500 bg-purple-600"/>
+          
+          <input  type="submit" value="Login" className="btn text-white hover:bg-purple-500 bg-purple-600"/>
         </div>
 
 

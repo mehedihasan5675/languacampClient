@@ -13,7 +13,7 @@ const CardInstructorsPage = ({Instructors}) => {
                   </h2>
                   <p className="font-medium tracking-wider text-base">{email}</p>
                  
-                  <button className="btn  mt-3 hover:bg-purple-950 text-white bg-violet-900">See Classes</button>
+                  <button className="btn  mt-3 hover:bg-purple-950 text-white bg-violet-900">Show Classes</button>
 
                 </div>
               </div>

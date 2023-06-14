@@ -40,7 +40,21 @@ if(user){
     }
 })
 }else{
-    navigate('/')
+   
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "you have to login first!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Login!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate('/login')
+        
+      }
+    })
 }
     }
     return (
