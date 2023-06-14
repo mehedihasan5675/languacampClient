@@ -80,11 +80,11 @@ import PrivateRoute from "./privateRoute/PrivateRoute";
           },
           {
             path:'payment/:id',
-            element:<PaymentUser></PaymentUser>
+            element:<PrivateRoute><PaymentUser></PaymentUser></PrivateRoute>
           },
           {
             path:'paymentHistory',
-            element:<PaymentHistory></PaymentHistory>
+            element:<PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
           },
           {
             path:'instructorClasses',
