@@ -8,6 +8,7 @@ import ManageClasses from "../DashboardPages/AdminPages/ManageClasses/ManageClas
 import ManageUsers from "../DashboardPages/AdminPages/ManageUsers/ManageUsers";
 import AddClasses from "../DashboardPages/InstructorPage/AddClass/AddClasses";
 import InstructorClasses from "../DashboardPages/InstructorPage/InstructorClasses/InstructorClasses";
+import UserSelectedClasses from "../DashboardPages/UserDashboard/UserSelectedClasses";
 import Dashboard from "../layout/Dashboard";
 import MainLayout from "../layout/MainLayout";
 import ClassesPage from "../pages/ClassesPage/ClassesPage";
@@ -43,6 +44,7 @@ import Register from "../pages/login&register/register/Register";
           element:<ClassesPage></ClassesPage>
         },
         
+        
         {
           path:'*',
           element:<Navigate to="error"></Navigate>
@@ -58,6 +60,10 @@ import Register from "../pages/login&register/register/Register";
           {
             path:'manageUsers',
             element:<ManageUsers></ManageUsers>
+          },
+          {
+            path:'mySelectedClass',
+            element:<UserSelectedClasses></UserSelectedClasses>
           },
           {
             path:'addClasses',

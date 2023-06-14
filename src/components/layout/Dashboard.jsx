@@ -72,7 +72,7 @@ const Dashboard = () => {
 
             <li ><ActiveLink to="/classes"><FaPhotoVideo className="text-yellow-400"></FaPhotoVideo>All Classes</ActiveLink></li>
 
-            <li ><ActiveLink to="/instructor"><FaUserGraduate className="text-yellow-400"></FaUserGraduate>All  Instructors</ActiveLink></li>
+            <li ><ActiveLink to="/instructors"><FaUserGraduate className="text-yellow-400"></FaUserGraduate>All  Instructors</ActiveLink></li>
 
 
 

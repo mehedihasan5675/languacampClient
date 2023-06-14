@@ -4,13 +4,21 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import ActiveLink from "../../activelink/ActiveLink";
+import Loader from "../../loader/Loader";
 import useAdmin from "../../utils/useAdmin";
 import useInstructor from "../../utils/useInstructor";
+import useSelectedClasses from "../../utils/useSelectedClasses";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isAdmin]=useAdmin()
   const [isInstructor]=useInstructor()
-  const navigate = useNavigate();
+  const navigate=useNavigate()
+  const [selectedClass,refetch,isLoading]=useSelectedClasses()
+  if(isLoading){
+    return <Loader></Loader>
+  }
+  // console.log(selectedClass.length);
+ 
   const handleSingOut = () => {
     logOut()
       .then(() => {
@@ -57,7 +65,7 @@ const Header = () => {
             <>
               <button className="btn mt-3 md:mt-0 items-center bg-purple-900  hover:bg-purple-700  border-none shadow-md btn-sm lg:btn-md flex gap-2 mr-2">
                 <FaShoppingCart className="text-white"></FaShoppingCart>
-                <div className="badge badge-secondary">+ {}</div>
+                <div className="badge badge-secondary">+{selectedClass.length}</div>
               </button>
             </>
           )}

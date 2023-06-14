@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../../loader/Loader";
 import SectionTitle from "../../utils/SectionTitle";
 import useAxiosSecure from "../../utils/useAxiosSecure";
 import CardInstructorsPage from "./CardInstructorsPage";
 
 const InstructorsPage = () => {
     const [axiosSecure]=useAxiosSecure()
-    const {data:approvedInstructor,refetch}=useQuery({
+    const {data:approvedInstructor,isLoading,refetch}=useQuery({
         queryKey:['approved_instructor',],
         queryFn:async()=>{
             const res=await axiosSecure('/approvedInstructor')
@@ -13,6 +14,9 @@ const InstructorsPage = () => {
         }
         
     })
+    if(isLoading){
+        return <Loader></Loader>
+    }
     return (
         <div className=" bg-gradient-to-b from-[#815ead] to-purple-900">
             <SectionTitle body="All instructors"></SectionTitle>
