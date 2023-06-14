@@ -20,7 +20,7 @@ const PaymentUser = () => {
     return (
         <div className="px-5">
             <DashSecTitle body="Payment"></DashSecTitle>
-            <p className="font-mono text-2xl font-bold tracking-widest text-white">Enrolled amount: ${clickedClass.price}</p>
+            <p className="font-mono text-2xl font-bold tracking-widest text-gray-900">Enrolled amount: ${clickedClass.price}</p>
 
             <div>
             <Elements stripe={stripePromise}>

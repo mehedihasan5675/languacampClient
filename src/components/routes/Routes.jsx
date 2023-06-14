@@ -8,6 +8,8 @@ import ManageClasses from "../DashboardPages/AdminPages/ManageClasses/ManageClas
 import ManageUsers from "../DashboardPages/AdminPages/ManageUsers/ManageUsers";
 import AddClasses from "../DashboardPages/InstructorPage/AddClass/AddClasses";
 import InstructorClasses from "../DashboardPages/InstructorPage/InstructorClasses/InstructorClasses";
+import EnrolledClass from "../DashboardPages/UserDashboard/EnrolledClasses/EnrolledClass";
+import PaymentHistory from "../DashboardPages/UserDashboard/PaymentHistory/PaymentHistory";
 import PaymentUser from "../DashboardPages/UserDashboard/PaymentUser/PaymentUser";
 import UserSelectedClasses from "../DashboardPages/UserDashboard/UserSelectedClasses";
 import Dashboard from "../layout/Dashboard";
@@ -66,6 +68,10 @@ import Register from "../pages/login&register/register/Register";
             path:'mySelectedClass',
             element:<UserSelectedClasses></UserSelectedClasses>
           },
+        {
+          path:'enrolled',
+          element:<EnrolledClass></EnrolledClass>
+        },
           {
             path:'addClasses',
             element:<AddClasses></AddClasses>
@@ -73,6 +79,10 @@ import Register from "../pages/login&register/register/Register";
           {
             path:'payment/:id',
             element:<PaymentUser></PaymentUser>
+          },
+          {
+            path:'paymentHistory',
+            element:<PaymentHistory></PaymentHistory>
           },
           {
             path:'instructorClasses',
