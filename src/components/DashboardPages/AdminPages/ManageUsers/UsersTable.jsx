@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
-import { FaTrashAlt, FaUserGraduate, FaUserShield } from 'react-icons/fa';
+import { FaTrashAlt, FaUserGraduate } from 'react-icons/fa';
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../../../utils/useAxiosSecure";
@@ -88,10 +88,10 @@ const handleInstructorBtn=(user)=>{
   
 }
   return (
-    <div >
+    <div className="">
       <h3 className="text-white font-mono text-lg font-semibold">All users: <span className="text-yellow-200 font-bold text-2xl">{users?.length}</span></h3>
       <div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto ">
           <table className="table">
             {/* head */}
             <thead>
@@ -138,19 +138,17 @@ const handleInstructorBtn=(user)=>{
                     </td>
                     <td className="text-gray-950 tracking-wider">{user.email}</td>
                     <th >
-                      <div className="">
-                      {
-                        user?.role ==='admin' ? <p className=" flex  items-center btn btn-sm justify-center      italic"><span className="text-green-400 text-xl">✔</span> Admin</p>:<><button onClick={()=>handleAdminBtn(user)} className="btn  btn-ghost btn-outline text-xs  btn-sm"><FaUserShield className="w-5 h-5"></FaUserShield>Make Admin</button></>
+                     
+{
+                        user?.role ==='admin' ? <div className="w-fullmx-auto   flex items-center btn btn-sm justify-center      italic"><span className="text-green-400 text-xl">✔</span>Admin</div>:<><button  onClick={()=>handleAdminBtn(user)} className={`btn   ${user.email === 'admin@admin.com' ?'hidden':''} items-center  btn-ghost btn-outline ml-3 text-xs  btn-sm flex`}> <span className="flex gap-2 items-center justify-center"><FaUserGraduate className="h-5 w-5"/> Make Admin</span></button></>
                       }
-                      </div>
-
                       
                     </th>
                     <th>
 
                     <div className="">
                       {
-                        user?.role ==='instructor' ? <div className="w-fullmx-auto   flex items-center btn btn-sm justify-center      italic"><span className="text-green-400 text-xl">✔</span>Instructor</div>:<><button  onClick={()=>handleInstructorBtn(user)} className={`btn   ${user.email === 'admin@admin.com' ?'hidden':''} items-center  btn-ghost btn-outline ml-3 text-xs  btn-sm flex`}> <span className="flex gap-2 items-center justify-center"><FaUserGraduate className="h-5 w-5"/> Make Instructor</span></button></>
+                        user?.role ==='instructor' ? <div className="w-full mx-auto   flex items-center btn btn-sm justify-center      italic"><span className="text-green-400 text-xl">✔</span>Instructor</div>:<><button  onClick={()=>handleInstructorBtn(user)} className={`btn   ${user.email === 'admin@admin.com' ?'hidden':''} items-center  btn-ghost btn-outline ml-3 text-xs  btn-sm flex`}> <span className="flex gap-2 items-center justify-center"><FaUserGraduate className="h-5 w-5"/> Make Instructor</span></button></>
                       }
                       </div>
                     </th>

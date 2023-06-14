@@ -3,12 +3,14 @@ import {
   Navigate,
   createBrowserRouter
 } from "react-router-dom";
+import ClassesFeedback from "../DashboardPages/AdminPages/ManageClasses/ClassesFeedback";
 import ManageClasses from "../DashboardPages/AdminPages/ManageClasses/ManageClasses";
 import ManageUsers from "../DashboardPages/AdminPages/ManageUsers/ManageUsers";
 import AddClasses from "../DashboardPages/InstructorPage/AddClass/AddClasses";
 import InstructorClasses from "../DashboardPages/InstructorPage/InstructorClasses/InstructorClasses";
 import Dashboard from "../layout/Dashboard";
 import MainLayout from "../layout/MainLayout";
+import InstructorsPage from "../pages/InstructorsPage/InstructorsPage";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 import Home from "../pages/homePage/home/Home";
 import Login from "../pages/login&register/login/Login";
@@ -30,6 +32,10 @@ import Register from "../pages/login&register/register/Register";
         {
           path:'register',
           element:<Register></Register>
+        },
+        {
+          path:'instructors',
+          element:<InstructorsPage></InstructorsPage>
         },
         
         {
@@ -59,6 +65,10 @@ import Register from "../pages/login&register/register/Register";
           {
             path:'manageClasses',
             element:<ManageClasses></ManageClasses>
+          },
+          {
+            path:'feedback/:id',
+            element:<ClassesFeedback></ClassesFeedback>
           }
         ]
         

@@ -19,9 +19,11 @@ const Dashboard = () => {
     <>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col bg-[#a9907eab] h-screen">
+        <div className="drawer-content flex flex-col w-full bg-[#a9907eab] h-screen">
         <div>{navigation.state === 'loading' && <Loader></Loader>}</div>
+         
           <Outlet></Outlet>
+         
           <label
             htmlFor="my-drawer-2"
             className="btn top-1/2 -left-1 fixed bg-[#A9907E] bg-opacity-60   border-none drawer-button lg:hidden"
@@ -82,7 +84,6 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
 
 
 
