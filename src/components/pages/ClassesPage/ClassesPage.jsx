@@ -1,19 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
 import Loader from "../../loader/Loader";
 import SectionTitle from "../../utils/SectionTitle";
-import useAxiosSecure from "../../utils/useAxiosSecure";
+import useApprovedClasses from "../../utils/useApprovedClasses";
 import CardClassesPage from "./CardClassesPage";
 
 const ClassesPage = () => {
-    const [axiosSecure]=useAxiosSecure()
-    const {data:approvedClasses,isLoading:isClassesDataLoding,refetch,}=useQuery({
-        queryKey:['approved_classes',],
-        queryFn:async()=>{
-            const res=await axiosSecure('/approvedClasses')
-            return res.data
-        }
-        
-    })
+    const [approvedClasses,isClassesDataLoding,refetch]=useApprovedClasses()
     if(isClassesDataLoding){
         return <Loader></Loader>
     }

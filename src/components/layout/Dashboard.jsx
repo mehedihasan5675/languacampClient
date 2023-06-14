@@ -9,8 +9,7 @@ const Dashboard = () => {
     const navigation=useNavigation()
     const [isAdmin,isAdminLoading]=useAdmin()
     const [isInstructor,isInstructorLoading]=useInstructor()
-    console.log(isInstructor,isAdmin);
-   if(isAdminLoading && isInstructorLoading){
+   if(isAdminLoading || isInstructorLoading){
     return <Loader></Loader>
    }
     // const isAdmin=true
@@ -59,7 +58,7 @@ const Dashboard = () => {
               <ActiveLink to="/dashboard/mySelectedClass"><FaHome className="text-yellow-400"></FaHome> My Selected Classes</ActiveLink>
                <ActiveLink to="/"><FaHome className="text-yellow-400"></FaHome>My Enrolled Classes</ActiveLink> 
               
-              <ActiveLink to="/"><FaWallet className="text-yellow-400"></FaWallet> Payment </ActiveLink>
+              <ActiveLink to="/dashboard/payment"><FaWallet className="text-yellow-400"></FaWallet> Payment </ActiveLink>
             </li>
             
               </>
