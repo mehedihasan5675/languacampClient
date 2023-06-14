@@ -10,6 +10,7 @@ import AddClasses from "../DashboardPages/InstructorPage/AddClass/AddClasses";
 import InstructorClasses from "../DashboardPages/InstructorPage/InstructorClasses/InstructorClasses";
 import Dashboard from "../layout/Dashboard";
 import MainLayout from "../layout/MainLayout";
+import ClassesPage from "../pages/ClassesPage/ClassesPage";
 import InstructorsPage from "../pages/InstructorsPage/InstructorsPage";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 import Home from "../pages/homePage/home/Home";
@@ -36,6 +37,10 @@ import Register from "../pages/login&register/register/Register";
         {
           path:'instructors',
           element:<InstructorsPage></InstructorsPage>
+        },
+        {
+          path:'classes',
+          element:<ClassesPage></ClassesPage>
         },
         
         {
