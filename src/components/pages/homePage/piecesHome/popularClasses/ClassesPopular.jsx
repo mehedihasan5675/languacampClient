@@ -15,7 +15,7 @@ const ClassesPopular = () => {
             <div className="grid max-w-7xl mx-auto py-16 gap-10  md:grid-cols-2 xl:grid-cols-3  justify-center">
            
               {
-                approvedClasses?.slice(0,5).map((cl,i)=><CardClass key={i} allClass={cl}></CardClass>)
+                approvedClasses?.slice(0,6).map((cl,i)=><CardClass key={i} allClass={cl}></CardClass>)
               }
             </div>
         </div>

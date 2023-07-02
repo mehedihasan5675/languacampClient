@@ -1,17 +1,13 @@
-import { useEffect, useState } from "react";
+import Loader from "../../../../loader/Loader";
 import SectionTitle from "../../../../utils/SectionTitle";
+import useApprovedClasses from "../../../../utils/useApprovedClasses";
 import CardPopularInstructor from "./CardPopularInstructor";
 
 const PopularInstructor = () => {
-    const [allPopularInstructor,setAllPopularInstructor]=useState([])
-    useEffect(()=>{
-        fetch('./instructorData.json')
-        .then(res=>res.json())
-        .then(data=>{
-            setAllPopularInstructor(data)
-        })
-    },[])
-
+  const [approvedClasses,isClassesDataLoding,refetch]=useApprovedClasses()
+  if(isClassesDataLoding){
+    return <Loader></Loader>
+  }
     
   return (
     <div className="bg-gradient-to-t from-[#815ead] to-purple-900">
@@ -20,7 +16,7 @@ const PopularInstructor = () => {
       </div>
       <div className="grid max-w-7xl mx-auto py-20 gap-10  md:grid-cols-2 xl:grid-cols-3  justify-center">
     {
-        allPopularInstructor.map((dt,i)=><CardPopularInstructor key={i} popularInstructor={dt}></CardPopularInstructor>)
+        approvedClasses?.slice(0,6).map((dt,i)=><CardPopularInstructor key={i} popularInstructor={dt}></CardPopularInstructor>)
     }
 
       </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
@@ -12,8 +12,14 @@ const CardClassesPage = ({allClass}) => {
     const [isAdmin]=useAdmin()
     const [isInstructor]=useInstructor()
     const {user}=useContext(AuthContext)
+    const [seatZero,setSeatZero]=useState(false)
     
-    const {available_seats,image,instructor_name,instructor_email,class_name,price,_id}=allClass
+    const {available_seats,image,instructor_name,instructor_email,class_name,price,_id,total_enrolled}=allClass
+    useEffect(()=>{
+      if(available_seats===0){
+        setSeatZero(true)
+      }
+    },[available_seats])
     const navigate=useNavigate()
     const [,refetch,isLoading]=useSelectedClasses()
     if(isLoading){
@@ -21,8 +27,8 @@ const CardClassesPage = ({allClass}) => {
     }
     
     const handleSeletedClass=(selectedclasses)=>{
-        const {available_seats,image,instructor_name,instructor_email,class_name,price,status,total_enrolled}=selectedclasses;
-        const updatedSelectClass={available_seats,image,instructor_name,instructor_email,class_name,price,status,total_enrolled}
+        const {available_seats,image,instructor_name,instructor_email,class_name,price,status,total_enrolled,_id}=selectedclasses;
+        const updatedSelectClass={available_seats,image,instructor_name,instructor_email,class_name,price,status,total_enrolled,class_page_id:_id}
 
 if(user){
     axios.post('https://server-spoking-summer.vercel.app/ClassCart',updatedSelectClass)
@@ -30,6 +36,7 @@ if(user){
     if(data.data.insertedId){
         refetch()
         // setSelectJustOneTime(true)
+        
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -59,9 +66,9 @@ if(user){
     }
     return (
        <>
-        <div  className="card h-[450px] md:h-[500px]  mx-auto w-[340px] md:w-96 bg-base-100 shadow-xl">
+        <div  className={`card  h-[450px] md:h-[500px]  mx-auto w-[340px] md:w-96 bg-base-100 shadow-xl ${seatZero===true && 'bg-red-300  overflow-hidden'}`}>
                 <figure className="w-full h-[400px] md:h-[450px]"><img className="h-full w-full" src={image} alt="LANGUAGE" /></figure>
-                <div className="card-body font-mono">
+                <div className={`card-body dark:bg-gray-600 dark:text-white font-mono  ${seatZero===true && ' dark:text-white  dark:bg-red-600 '}`}>
                   <h2 className="card-title">
                     {class_name}
                     
@@ -70,15 +77,18 @@ if(user){
                  <p className="font-medium tracking-wider text-base">{instructor_name}</p>
                   <span className="badge badge-secondary">instructor</span>
                  </div>
-                  <div className="card-actions justify-between">
+                  <div className="card-actions my-1 justify-between">
                     <div >
-                        Avalilable seats : <span className="badge badge-outline font-semibold">{available_seats}</span>
+                        Avalilable seats : <span className={`badge badge-outline font-semibold ${seatZero===true && ' animate-bounce '}`} >{available_seats}</span>
                         </div> 
-                    <div >Price : <span className="badge badge-outline font-semibold">{price}</span>
+                    <div>Price : <span className="badge badge-outline font-semibold">{price}</span>
                     
                     </div>
                   </div>
-                  <button disabled={isAdmin || isInstructor} onClick={()=>handleSeletedClass(allClass)} className="btn  mt-3 hover:bg-purple-950 text-white bg-violet-900">Select</button>
+                  <div className="">Enrolled Student : <span className="badge badge-outline font-semibold">{total_enrolled}</span>
+                    
+                    </div>
+                  <button disabled={isAdmin || isInstructor || seatZero} onClick={()=>handleSeletedClass(allClass)} className="btn border-none mt-3 hover:bg-purple-950 text-white bg-violet-900">Select</button>
 
                 </div>
               </div>

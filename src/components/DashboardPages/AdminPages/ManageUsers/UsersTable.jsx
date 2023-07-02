@@ -87,6 +87,33 @@ const handleInstructorBtn=(user)=>{
 
   
 }
+const handleDeleteInstructor=(user)=>{
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this Instructor!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      axiosSecure.delete(`/deleteInstructor/${user?._id}`)
+      .then(res=>{
+        console.log(res.data);
+        if(res.data.deletedCount>0){
+          refetch()
+Swal.fire(
+        'Deleted!',
+        'Your Instructor has been deleted.',
+        'success'
+      )
+        }
+      })
+      
+    }
+  })
+}
   return (
     <div className="">
       <h3 className="text-white font-mono text-lg font-semibold">All users: <span className="text-yellow-200 font-bold text-2xl">{users?.length}</span></h3>
@@ -154,7 +181,7 @@ const handleInstructorBtn=(user)=>{
                     </th>
                     <th>
                       <div  className="flex gap-8">
-                      <button className="btn  bg-[#a9907e] hover:bg-[#a9907eab] border-none btn-sm"><FaTrashAlt className="text-rose-400 "></FaTrashAlt></button>
+                      <button onClick={()=>handleDeleteInstructor(user)} className={`btn  bg-[#a9907e] hover:bg-[#a9907eab] border-none btn-sm ${user.email === 'admin@admin.com' ?'hidden':''}`}><FaTrashAlt className="text-rose-400 "></FaTrashAlt></button>
                       </div>
                     </th>
                   </tr>)

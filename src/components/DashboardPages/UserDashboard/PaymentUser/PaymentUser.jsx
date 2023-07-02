@@ -16,11 +16,11 @@ const PaymentUser = () => {
         return <Loader></Loader>
     }
     const clickedClass=selectedClass.find(sc=>sc._id === id)
-    const price=parseInt(clickedClass.price)
+    const price=parseInt(clickedClass?.price)
     return (
         <div className="px-5">
             <DashSecTitle body="Payment"></DashSecTitle>
-            <p className="font-mono text-2xl font-bold tracking-widest text-gray-900">Enrolled amount: ${clickedClass.price}</p>
+            <p className="font-mono text-2xl font-bold tracking-widest text-gray-900">Enrolled amount: ${clickedClass?.price}</p>
 
             <div>
             <Elements stripe={stripePromise}>

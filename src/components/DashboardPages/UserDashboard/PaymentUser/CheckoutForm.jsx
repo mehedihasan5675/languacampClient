@@ -1,4 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../../AuthProvider/AuthProvider";
@@ -64,6 +65,13 @@ const CheckoutForm = ({cls,price}) => {
         console.log('paymentIntent',paymentIntent);
         setProcessing(false)
         if(paymentIntent.status==='succeeded'){
+          ///
+          axios.patch(`https://server-spoking-summer.vercel.app/reduce_increase/${cls.class_page_id}`)
+              .then(res=>{
+                console.log(res.data,'test seat updated');
+               
+              })
+          ///
           const transaction_Id=paymentIntent.id
           setCardError('')
           setTransantionId(transaction_Id)
@@ -75,7 +83,8 @@ const CheckoutForm = ({cls,price}) => {
             date: new Date(),
             status:'service pending',
             available_seats:cls.available_seats,
-            selectedClass_id:cls._id
+            selectedClass_id:cls._id,
+            class_page_id:cls.class_page_id
 
             
           }
@@ -84,7 +93,7 @@ const CheckoutForm = ({cls,price}) => {
           .then(res=>{
             console.log(res,'test');
             if(res.data.insertResult.insertedId){
-                
+              
               Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -94,6 +103,9 @@ const CheckoutForm = ({cls,price}) => {
               })
             }
           })
+
+          
+
         }
     };
     return (
